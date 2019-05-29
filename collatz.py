@@ -9,11 +9,15 @@ def collatz(number):
         return 3 * number + 1
     
 print('整数を入力してください：')
-answer = int(input())
-while True:
-    answer = int(collatz(answer))
-    print(answer)
-    if answer == 1:
-        break
-    else:
-        continue
+try:
+    answer = int(input())
+except ValueError:
+    print('エラー：整数を入力してください')
+else:
+    while True:
+        answer = int(collatz(answer))
+        print(answer)
+        if answer == 1:
+            break
+        else:
+            continue
