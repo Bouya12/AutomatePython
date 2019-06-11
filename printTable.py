@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 program     : printTable.py
 chapterNo   : 6.7
