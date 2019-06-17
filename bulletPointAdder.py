@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 program     : bulletPointAdder.py
 chapterNo   : 6.4
