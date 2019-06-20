@@ -47,6 +47,17 @@ for quiz_num in range(35):
         answer_options = wrong_answers + [correct_answer]
         random.shuffle(answer_options)
         
-        #TODO: 問題文と回答選択肢を問題ファイルに書く
+        # 問題文と回答選択肢を問題ファイルに書く
+        quiz_file.write('{}. {}の都道府県庁所在地は?\n'.format(question_num + 1,
+                        prefectures[question_num]))
+        for i in range(4):
+            quiz_file.write(' {}. {}\n'.format('ABCD'[i], answer_options[i]))
         
-        #TODO: 答えの選択肢を回答ファイルに書く
+        quiz_file.write('\n')
+        
+        # 答えの選択肢を回答ファイルに書く
+        answer_key_file.write(' {}. {}\n'.format(question_num + 1,
+                              'ABCD'[answer_options.index(correct_answer)]))
+        
+    quiz_file.close()
+    answer_key_file.close()
