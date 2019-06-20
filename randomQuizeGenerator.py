@@ -2,7 +2,7 @@
 program     : randomQuizeGenerator.py
 chapterNo   : 8.6
 description : ランダム順に問題と答えを並べ問題集と解答集を作る
-created     : 2019/06/17
+created     : 2019/06/20
 """
 
 import random
