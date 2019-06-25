@@ -16,8 +16,10 @@ import sys
 
 mcb_shelf = shelve.open('mcb')
 
-# TODO: クリップボードの内容を保存
-
-# TODO: キーワードの一覧と、内容の読み込み
+# クリップボードの内容を保存
+if len(sys.argv) == 3 and sys.argv[1].lower() == 'save':
+    mcb_shelf[sys.argv[2]] = pyperclip.paste()
+elif len(sys.argv) == 2:
+    # TODO: キーワードの一覧と、内容の読み込み
 
 mcb_shelf.close()
