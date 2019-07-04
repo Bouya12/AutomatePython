@@ -9,7 +9,7 @@ usage       :
     py.exe mcb.pyw <keyword> - キーワードに紐付けられたテキストをクリップボードにコピー
     py.exe mcb.pyw list - 全キーワードをクリップボードにコピー
     py.exe mcb.pyw delete <keyword> - シェルフから指定したキーワードを削除
-    py.exe mcb.pyw delete all - シェルフからすべてのキーワードを削除
+    py.exe mcb.pyw delete --all - シェルフからすべてのキーワードを削除
 ========================================================
 Moddify
 ========================================================
@@ -27,7 +27,12 @@ mcb_shelf = shelve.open('mcb')
 if len(sys.argv) == 3 and sys.argv[1].lower() == 'save':
     mcb_shelf[sys.argv[2]] = pyperclip.paste()
 
-# TODO: キーワードの削除
+# シェルフのキーワードを削除
+elif sys.argv[1].lower() == 'delete':
+    if sys.argv[2].lower() == '--all':
+        mcb_shelf.clear()
+    else:
+        del mcb_shelf[sys.argv[2]]
 
 elif len(sys.argv) == 2:
     
