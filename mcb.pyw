@@ -8,6 +8,13 @@ usage       :
     py.exe mcb.pyw save <keyword> - クリップボードにキーワードを紐づけて保存
     py.exe mcb.pyw <keyword> - キーワードに紐付けられたテキストをクリップボードにコピー
     py.exe mcb.pyw list - 全キーワードをクリップボードにコピー
+    py.exe mcb.pyw delete <keyword> - シェルフから指定したキーワードを削除
+    py.exe mcb.pyw delete all - シェルフからすべてのキーワードを削除
+========================================================
+Moddify
+========================================================
+2019/07/04 : Chapter 8.10.1  マルチクリップボードを拡張する
+・delete でキーワードを削除する機能を追加
 """
 
 import shelve
@@ -19,6 +26,9 @@ mcb_shelf = shelve.open('mcb')
 # クリップボードの内容を保存
 if len(sys.argv) == 3 and sys.argv[1].lower() == 'save':
     mcb_shelf[sys.argv[2]] = pyperclip.paste()
+
+# TODO: キーワードの削除
+
 elif len(sys.argv) == 2:
     
     # キーワードの一覧と、内容の読み込み
